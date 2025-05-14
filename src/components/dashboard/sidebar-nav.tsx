@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import type { UserRole } from '@/types';
+import { UserRole } from '@/types'; // Added import
 import { cn } from '@/lib/utils';
 import {
   LayoutDashboard,
