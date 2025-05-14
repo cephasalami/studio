@@ -17,9 +17,10 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import type { Visitor } from '@/types';
-import { ScanLine, LogIn, LogOut, User, CalendarText, HelpCircle, ShieldCheck } from 'lucide-react';
+import { ScanLine, LogIn, LogOut, User, CalendarDays, HelpCircle, ShieldCheck } from 'lucide-react';
 import { format } from 'date-fns';
 import { Badge } from '@/components/ui/badge';
+import { cn } from '@/lib/utils';
 
 const checkInFormSchema = z.object({
   accessCode: z.string().min(1, { message: 'Access code is required.' }),
@@ -188,7 +189,7 @@ export function SecurityDashboardView() {
               <span className="ml-2">{verifiedVisitor.purpose}</span>
             </div>
              <div className="flex items-center">
-              <CalendarText className="mr-3 h-5 w-5 text-muted-foreground" />
+              <CalendarDays className="mr-3 h-5 w-5 text-muted-foreground" />
               <span className="font-semibold">Expected Visit:</span>
               <span className="ml-2">{verifiedVisitor.visitDate ? format(new Date(verifiedVisitor.visitDate), "PPP") : 'N/A'}</span>
             </div>
